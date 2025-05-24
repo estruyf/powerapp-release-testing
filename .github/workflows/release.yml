@@ -91,11 +91,13 @@ jobs:
     environment: PROD
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download Managed Solution
         uses: actions/download-artifact@v4
         with:
           name: "${{ env.SOLUTION_NAME }}_managed"
-          path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
+          path: "solutions"
 
       - name: Install Power Platform Tools
         uses: microsoft/powerplatform-actions/actions-install@v1
@@ -107,6 +109,6 @@ jobs:
           app-id: ${{ vars.CLIENT_ID }}
           tenant-id: ${{vars.TENANT_ID}}
           client-secret: ${{ secrets.CLIENT_SECRET }}
-          solution-file: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
+          solution-file: "solutions/${{ env.SOLUTION_NAME }}_managed.zip"
           force-overwrite: true
           publish-changes: true
