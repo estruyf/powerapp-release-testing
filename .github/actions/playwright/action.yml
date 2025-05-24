@@ -24,7 +24,10 @@ inputs:
   M365_OTP_SECRET:
     description: 'OTP secret for the M365 environment'
     required: true
-  
+  CONNECTOR_SP_ID:
+    description: 'Connector SharePoint ID for the M365 environment'
+    required: true
+
 runs:
   using: composite
   steps:
@@ -68,6 +71,7 @@ runs:
         M365_USERNAME: ${{ inputs.M365_USERNAME }}
         M365_PASSWORD: ${{ inputs.M365_PASSWORD }}
         M365_OTP_SECRET: ${{ inputs.M365_OTP_SECRET }}
+        CONNECTOR_SP_ID: ${{ inputs.CONNECTOR_SP_ID }}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
