@@ -28,7 +28,7 @@ jobs:
       #     client-secret: ${{ secrets.CLIENT_SECRET }}
 
       - name: Create solutions directory
-        run: mkdir -p /solutions
+        run: mkdir -p "${{ github.workspace }}/solutions"
 
       - name: Export Solution
         uses: microsoft/powerplatform-actions/export-solution@v1
