@@ -19,13 +19,16 @@ jobs:
       - name: Install Power Platform Tools
         uses: microsoft/powerplatform-actions/actions-install@v1
 
-      - name: who-am-i action
-        uses: microsoft/powerplatform-actions/who-am-i@v1
-        with:
-          environment-url: ${{ vars.ENVIRONMENT_URL }}
-          app-id: ${{ vars.CLIENT_ID }}
-          tenant-id: ${{vars.TENANT_ID}}
-          client-secret: ${{ secrets.CLIENT_SECRET }}
+      # - name: who-am-i action
+      #   uses: microsoft/powerplatform-actions/who-am-i@v1
+      #   with:
+      #     environment-url: ${{ vars.ENVIRONMENT_URL }}
+      #     app-id: ${{ vars.CLIENT_ID }}
+      #     tenant-id: ${{vars.TENANT_ID}}
+      #     client-secret: ${{ secrets.CLIENT_SECRET }}
+
+      - name: Create solutions directory
+        run: mkdir -p /solutions
 
       - name: Export Solution
         uses: microsoft/powerplatform-actions/export-solution@v1
