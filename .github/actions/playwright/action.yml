@@ -24,10 +24,6 @@ inputs:
   M365_OTP_SECRET:
     description: 'OTP secret for the M365 environment'
     required: true
-  # Optional
-  M365_WEBHOOK_URL:
-    description: 'URL of the webhook to send the results to'
-    required: false
   
 runs:
   using: composite

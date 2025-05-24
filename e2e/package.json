@@ -18,11 +18,11 @@
   "author": "Elio Struyf <elio@struyfconsulting.be>",
   "license": "MIT",
   "dependencies": {
-    "@estruyf/github-actions-reporter": "^1.8.0",
-    "@playwright/test": "^1.50.1",
+    "@estruyf/github-actions-reporter": "^1.10.0",
+    "@playwright/test": "^1.52.0",
     "dotenv": "^16.3.1",
     "otpauth": "^9.3.1",
-    "playwright-m365-helpers": "^0.0.3"
+    "playwright-m365-helpers": "^0.0.5"
   },
   "devDependencies": {
     "@types/node": "^20.14.12"
