@@ -64,10 +64,18 @@ jobs:
           name: "${{ env.SOLUTION_NAME }}_unmanaged"
           path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}.zip"
 
-  # testing:
-  #   name: Testing StickerApp Solution on DEV Environment
-  #   runs-on: ubuntu-latest
-  #   needs: export
-  #   environment: DEV
+  testing:
+    name: Testing StickerApp Solution on DEV Environment
+    runs-on: ubuntu-latest
+    needs: export
+    environment: DEV
 
-  #   steps:
+    steps:
+      - name: Run the E2E test
+        uses: ./.github/actions/playwright
+        with:
+          M365_PAGE_URL: ${{ vars.M365_PAGE_URL }}
+          M365_USERNAME: ${{ secrets.M365_USERNAME }}
+          M365_PASSWORD: ${{ secrets.M365_PASSWORD }}
+          M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
+          environment: DEV
