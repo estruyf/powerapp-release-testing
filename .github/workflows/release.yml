@@ -11,12 +11,21 @@ env:
 
 jobs:
   export:
+    name: Export StickerApp Solution from DEV Environment
     runs-on: ubuntu-latest
     environment: DEV
 
     steps:
       - name: Install Power Platform Tools
         uses: microsoft/powerplatform-actions/actions-install@v1
+
+      - name: who-am-i action
+        uses: microsoft/powerplatform-actions/who-am-i@v1
+        with:
+          environment-url: ${{ vars.ENVIRONMENT_URL }}
+          app-id: ${{ vars.CLIENT_ID }}
+          tenant-id: ${{vars.TENANT_ID}}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
 
       - name: Export Solution
         uses: microsoft/powerplatform-actions/export-solution@v1
@@ -53,3 +62,11 @@ jobs:
         with:
           name: "${{ env.SOLUTION_NAME }}_unmanaged"
           path: "solutions/${{ env.SOLUTION_NAME }}.zip"
+
+  # testing:
+  #   name: Testing StickerApp Solution on DEV Environment
+  #   runs-on: ubuntu-latest
+  #   needs: export
+  #   environment: DEV
+
+  #   steps:
