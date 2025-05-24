@@ -71,6 +71,8 @@ jobs:
     environment: DEV
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Run the E2E test
         uses: ./.github/actions/playwright
         with:
