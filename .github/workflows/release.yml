@@ -23,7 +23,7 @@ jobs:
         with:
           environment-url: ${{ vars.ENVIRONMENT_URL }}
           app-id: ${{ vars.CLIENT_ID }}
-          tenant-id: ${{secrets.TENANT_ID}}
+          tenant-id: ${{vars.TENANT_ID}}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           solution-name: ${{ env.SOLUTION_NAME }}
           solution-output-file: "${{ env.SOLUTION_NAME }}_managed.zip"
