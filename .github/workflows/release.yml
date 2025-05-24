@@ -38,7 +38,7 @@ jobs:
           tenant-id: ${{vars.TENANT_ID}}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           solution-name: ${{ env.SOLUTION_NAME }}
-          solution-output-file: "/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
+          solution-output-file: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
           managed: true
 
       - name: Export Solution (unmanaged)
@@ -49,20 +49,20 @@ jobs:
           tenant-id: ${{secrets.TENANT_ID}}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           solution-name: ${{ env.SOLUTION_NAME }}
-          solution-output-file: "/solutions/${{ env.SOLUTION_NAME }}.zip"
+          solution-output-file: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}.zip"
           managed: false
 
       - name: Upload Managed Solution
         uses: actions/upload-artifact@v4
         with:
           name: "${{ env.SOLUTION_NAME }}_managed"
-          path: "/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
+          path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
 
       - name: Upload Unmanaged Solution
         uses: actions/upload-artifact@v4
         with:
           name: "${{ env.SOLUTION_NAME }}_unmanaged"
-          path: "/solutions/${{ env.SOLUTION_NAME }}.zip"
+          path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}.zip"
 
   # testing:
   #   name: Testing StickerApp Solution on DEV Environment
