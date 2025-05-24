@@ -101,7 +101,7 @@ test.describe("PowerApps", () => {
     const firstItem = inventoryItems.value[0];
     await mockConnector(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       { value: [firstItem] },
       "GET",
       200,
@@ -131,7 +131,7 @@ test.describe("PowerApps", () => {
     const firstTwoItems = inventoryItems.value.slice(0, 2);
     await mockConnector(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       { value: [...firstTwoItems] },
       "GET",
       200,
@@ -168,7 +168,7 @@ test.describe("PowerApps", () => {
 
     const response = await waitForConnectorResponse(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       "GET",
       { logging: true }
     );
@@ -200,7 +200,7 @@ test.describe("PowerApps", () => {
 
     const response = await waitForConnectorResponse(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       "GET",
       { logging: false }
     );
@@ -237,7 +237,7 @@ test.describe("PowerApps", () => {
 
     await mockConnector(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       {
         value: [],
       },
@@ -252,7 +252,7 @@ test.describe("PowerApps", () => {
 
     await waitForConnectorResponse(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       "GET",
       { logging: false }
     );
@@ -302,7 +302,7 @@ test.describe("PowerApps", () => {
     // Mock the POST request to create a new sticker
     await mockConnector(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       fakeItem(
         999,
         sticker.title,
@@ -320,7 +320,7 @@ test.describe("PowerApps", () => {
 
     await waitForConnectorResponse(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       "POST",
       { logging: true }
     );
@@ -328,7 +328,7 @@ test.describe("PowerApps", () => {
     // Mock the response to include the new sticker
     await mockConnector(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       {
         value: [
           fakeItem(
@@ -348,7 +348,7 @@ test.describe("PowerApps", () => {
 
     await waitForConnectorResponse(
       page,
-      "sharepointonline/4aee3a63496d4e3f998c3910ba712bf2",
+      `sharepointonline/${process.env.CONNECTOR_SP_ID}`,
       "GET",
       { logging: false }
     );

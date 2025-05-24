@@ -68,7 +68,9 @@ jobs:
     name: Testing StickerApp Solution on DEV Environment
     runs-on: ubuntu-latest
     needs: export
-    environment: DEV
+    environment:
+      name: DEV
+      url: ${{ vars.M365_PAGE_URL }}
 
     steps:
       - uses: actions/checkout@v4
@@ -81,3 +83,30 @@ jobs:
           M365_PASSWORD: ${{ secrets.M365_PASSWORD }}
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
           environment: DEV
+
+  release:
+    name: Release StickerApp Solution to PROD Environment
+    runs-on: ubuntu-latest
+    needs: testing
+    environment: PROD
+
+    steps:
+      - name: Download Managed Solution
+        uses: actions/download-artifact@v4
+        with:
+          name: "${{ env.SOLUTION_NAME }}_managed"
+          path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
+
+      - name: Install Power Platform Tools
+        uses: microsoft/powerplatform-actions/actions-install@v1
+
+      - name: Import solution to PROD Environment
+        uses: microsoft/powerplatform-actions/import-solution@v1
+        with:
+          environment-url: ${{ vars.ENVIRONMENT_URL }}
+          app-id: ${{ vars.CLIENT_ID }}
+          tenant-id: ${{vars.TENANT_ID}}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          solution-file: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
+          force-overwrite: true
+          publish-changes: true
