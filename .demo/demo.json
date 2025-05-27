@@ -112,7 +112,7 @@
           "action": "highlight",
           "path": "/e2e/tests/mfa.setup.ts",
           "position": "10:24",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -151,7 +151,7 @@
           "action": "highlight",
           "path": "/e2e/tests/powerapps.spec.ts",
           "position": "44:49",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -163,7 +163,7 @@
           "action": "highlight",
           "path": "/e2e/tests/powerapps.spec.ts",
           "position": "102:109",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -175,7 +175,7 @@
           "action": "highlight",
           "path": "/e2e/tests/powerapps.spec.ts",
           "position": "122:123",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -214,7 +214,7 @@
           "action": "highlight",
           "path": "/.github/actions/export/action.yml",
           "position": "24:25",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -226,7 +226,7 @@
           "action": "highlight",
           "path": "/.github/actions/export/action.yml",
           "position": "31:40",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -238,7 +238,7 @@
           "action": "highlight",
           "path": "/.github/actions/export/action.yml",
           "position": "42:51",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -250,7 +250,7 @@
           "action": "highlight",
           "path": "/.github/actions/playwright/action.yml",
           "position": "65:74",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -262,7 +262,7 @@
           "action": "highlight",
           "path": "/.github/actions/release/action.yml",
           "position": "32:41",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
