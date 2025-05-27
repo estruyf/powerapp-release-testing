@@ -1,26 +1,20 @@
-# Playwright Release Testing Presentation
+# Integrate Playwright tests for Power Apps into your DevOps process
 
-This repository contains resources and end-to-end (E2E) tests for demonstrating Playwright's capabilities in release testing scenarios. It is designed for presentations and workshops to showcase how Playwright can be used to automate browser testing, validate application behavior, and generate useful reports.
+Tired of Power Platform solutions that feel like being held together by duct tape and bubble gum? You're not alone. In this session, Luise and Elio will discuss why proper testing is often overlooked in Power Apps development and how we can change that game. We'll introduce you to Playwright, your new best friend for automated testing, and show you why it's a perfect match for Power Apps. We'll cover the essentials of making your apps test-friendly and walk you through some common tests to get you started. But we won't stop there. We'll show you how to take your testing to the next level by automating the process and seamlessly integrating it into your development pipeline. By the end of this session, you'll have a clear roadmap for releasing rock-solid Power Apps that'll make your users (and your sanity) thank you.
+
+Session presented by [Luise Freese](https://www.linkedin.com/in/luisefreese) and [Elio Struyf](https://eliostruyf.com).
+
+[Download the slides](./Playwright_Release_Testing-Luise_Elio.pdf)
 
 ## Project Structure
 
+- `.demo/`: Contains the presentation slides and demo resources
+   - Install the [Demo Time](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time) extension for Visual Studio Code
+   - Start the presentation from the Demo Time panel
 - `e2e/` — Main folder for E2E tests and Playwright configuration
-  - `package.json` — Project dependencies and scripts
-  - `playwright.config.ts` — Playwright configuration file
-  - `constants/` — Shared constants for tests
-  - `helpers/` — Utility functions for tests
-  - `mocks/` — Mock data for test scenarios
-  - `playwright-report/` — Generated Playwright HTML reports
-  - `screenshots/` — Screenshots captured during test runs
-  - `scripts/` — Helper scripts (e.g., OTP retrieval)
-  - `test-results/` — Raw test result data and traces
   - `tests/` — Test specifications (e.g., `powerapps.spec.ts`, `mfa.setup.ts`)
 
 ## Getting Started
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v16 or higher recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
 ### Installation
 
@@ -31,31 +25,11 @@ This repository contains resources and end-to-end (E2E) tests for demonstrating 
 2. Install dependencies:
    ```sh
    npm install
-   # or
-   yarn install
    ```
 
 ### Running Tests
 
 To run all Playwright tests:
 ```sh
-npx playwright test
+npm run test:ui
 ```
-
-To open the Playwright test report after a run:
-```sh
-npx playwright show-report
-```
-
-### Additional Scripts
-- Custom scripts are available in the `scripts/` directory (e.g., `get-otp.mjs`).
-- Screenshots and test traces are saved automatically for failed tests.
-
-## Playwright Report
-After running tests, an HTML report is generated in `e2e/playwright-report/`. Open `index.html` in your browser to view detailed results, traces, and screenshots.
-
-## Contributing
-Feel free to fork this repository and adapt it for your own Playwright demos or release testing needs.
-
-## License
-MIT
