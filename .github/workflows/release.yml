@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Release StickerApp Solution
-        uses: ./actions/release/action.yml
+        uses: ./.github/actions/release
         with:
           environment-url: ${{ vars.ENVIRONMENT_URL }}
           app-id: ${{ vars.CLIENT_ID }}
