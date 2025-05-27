@@ -43,5 +43,11 @@ export default defineConfig({
       },
       dependencies: ["setup"],
     },
+    {
+      name: "website",
+      use: {
+        ...devices["Desktop Chrome"],
+      }
+    }
   ],
 });

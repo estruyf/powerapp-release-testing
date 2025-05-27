@@ -1,3 +1,7 @@
 {
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "demoTime.highlightBorderColor": "transparent",
+  "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
+  "demoTime.highlightOpacity": 0.5,
+  "demoTime.highlightBlur": 2,
 }

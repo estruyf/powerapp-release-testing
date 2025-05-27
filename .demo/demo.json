@@ -5,12 +5,162 @@
   "version": 2,
   "demos": [
     {
-      "title": "Playwright for Power Platform",
+      "title": "Start",
+      "description": "",
+      "steps": [
+        {
+          "action": "closeAll"
+        }
+      ]
+    },
+    {
+      "title": "Intro",
       "description": "",
       "steps": [
         {
           "action": "openSlide",
           "path": "/.demo/slides/playwright-for-power-platform.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "The app",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://apps.powerapps.com/play/e/3a13b6f5-38e6-e073-a20c-fe786cecb25c/a/40e8b852-239b-4c3f-bf4b-853ad1d40043?tenantId=b32d3268-2794-435f-865f-ab4779cae11e&hint=f7fd945f-6c3b-4d5e-aeb4-dc1c894ea4af&sourcetime=1748264900270&source=portal"
+        }
+      ]
+    },
+    {
+      "title": "The test options",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/the-test-options.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Website test",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/website.spec.ts",
+          "position": "1:8",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Demo website",
+      "description": "",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd e2e && npm run test:ui"
+        }
+      ]
+    },
+    {
+      "title": "Auth",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/auth.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Auth code",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/mfa.setup.ts",
+          "position": "10:24",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Demo auth",
+      "description": "",
+      "steps": []
+    },
+    {
+      "title": "Power Apps",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/power-apps.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Highlight label check",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/powerapps.spec.ts",
+          "position": "44:49",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Mock connectors",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/powerapps.spec.ts",
+          "position": "102:109",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Check number of items",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/powerapps.spec.ts",
+          "position": "122:123",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "More testing",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/more-testing.md"
         }
       ],
       "icons": {
