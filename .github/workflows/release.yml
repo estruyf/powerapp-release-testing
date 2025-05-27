@@ -16,53 +16,16 @@ jobs:
     environment: DEV
 
     steps:
-      - name: Install Power Platform Tools
-        uses: microsoft/powerplatform-actions/actions-install@v1
-
-      # - name: who-am-i action
-      #   uses: microsoft/powerplatform-actions/who-am-i@v1
-      #   with:
-      #     environment-url: ${{ vars.ENVIRONMENT_URL }}
-      #     app-id: ${{ vars.CLIENT_ID }}
-      #     tenant-id: ${{vars.TENANT_ID}}
-      #     client-secret: ${{ secrets.CLIENT_SECRET }}
-
-      - name: Create solutions directory
-        run: mkdir -p "${{ github.workspace }}/solutions"
-
+      - uses: actions/checkout@v4
+      
       - name: Export Solution
-        uses: microsoft/powerplatform-actions/export-solution@v1
+        uses: ./.github/actions/export
         with:
           environment-url: ${{ vars.ENVIRONMENT_URL }}
           app-id: ${{ vars.CLIENT_ID }}
-          tenant-id: ${{vars.TENANT_ID}}
+          tenant-id: ${{ vars.TENANT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           solution-name: ${{ env.SOLUTION_NAME }}
-          solution-output-file: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
-          managed: true
-
-      - name: Export Solution (unmanaged)
-        uses: microsoft/powerplatform-actions/export-solution@v1
-        with:
-          environment-url: ${{ vars.ENVIRONMENT_URL }}
-          app-id: ${{ vars.CLIENT_ID }}
-          tenant-id: ${{vars.TENANT_ID}}
-          client-secret: ${{ secrets.CLIENT_SECRET }}
-          solution-name: ${{ env.SOLUTION_NAME }}
-          solution-output-file: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}.zip"
-          managed: false
-
-      - name: Upload Managed Solution
-        uses: actions/upload-artifact@v4
-        with:
-          name: "${{ env.SOLUTION_NAME }}_managed"
-          path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}_managed.zip"
-
-      - name: Upload Unmanaged Solution
-        uses: actions/upload-artifact@v4
-        with:
-          name: "${{ env.SOLUTION_NAME }}_unmanaged"
-          path: "${{ github.workspace }}/solutions/${{ env.SOLUTION_NAME }}.zip"
 
   testing:
     name: Testing StickerApp Solution on DEV Environment
@@ -93,22 +56,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download Managed Solution
-        uses: actions/download-artifact@v4
-        with:
-          name: "${{ env.SOLUTION_NAME }}_managed"
-          path: "solutions"
-
-      - name: Install Power Platform Tools
-        uses: microsoft/powerplatform-actions/actions-install@v1
-
-      - name: Import solution to PROD Environment
-        uses: microsoft/powerplatform-actions/import-solution@v1
+      - name: Release StickerApp Solution
+        uses: ./actions/release/action.yml
         with:
           environment-url: ${{ vars.ENVIRONMENT_URL }}
           app-id: ${{ vars.CLIENT_ID }}
-          tenant-id: ${{vars.TENANT_ID}}
+          tenant-id: ${{ vars.TENANT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
-          solution-file: "solutions/${{ env.SOLUTION_NAME }}_managed.zip"
-          force-overwrite: true
-          publish-changes: true
+          solution-name: ${{ env.SOLUTION_NAME }}

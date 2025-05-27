@@ -4,4 +4,10 @@
   "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
   "demoTime.highlightOpacity": 0.5,
   "demoTime.highlightBlur": 2,
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "expand",
+  "workbench.colorCustomizations": {
+      "editorCursor.foreground": "#ff69b4"
+  },
+  "editor.hover.enabled": false
 }

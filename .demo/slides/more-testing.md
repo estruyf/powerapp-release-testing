@@ -80,30 +80,20 @@ flowchart LR
   dev --> e2e1 --> test --> e2e2 --> manual --> prod
 ```
 
-Dev
+---
+
+# Development
+
 - Export from DEV environment
   - **Managed** and **unmanaged** solutions
 - Unpack the solution to have the code
-
-Test
-- Import the **managed** solution
-
-Prod
-- Import the **managed** solution
+  - Process the `.msapp` file
+  - Check-in the code
 
 ---
-
-DEMO: Playwright in GitHub Actions
-
+layout: section
 ---
 
-# Outro
+# Test & Production
 
-- Present ourselves
-
----
-layout: image
-image: .demo/images/thank-you.png
----
-
-<!-- # Thank you! -->
+## Import the **managed** solution

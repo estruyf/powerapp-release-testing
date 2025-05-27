@@ -1,0 +1,41 @@
+name: 'Release Managed Solution'
+description: 'Composite action to download, install tools, and import managed solution to PROD'
+inputs:
+  environment-url:
+    description: 'The URL of the Power Platform environment.'
+    required: true
+  app-id:
+    description: 'Azure AD application (client) ID.'
+    required: true
+  tenant-id:
+    description: 'Azure AD tenant ID.'
+    required: true
+  client-secret:
+    description: 'Azure AD application client secret.'
+    required: true
+  solution-name:
+    description: 'Name of the solution to export.'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Download Managed Solution
+      uses: actions/download-artifact@v4
+      with:
+        name: "${{ inputs.solution-name }}_managed"
+        path: "solutions"
+
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
+    - name: Import solution to PROD Environment
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        environment-url: ${{ inputs.environment-url }}
+        app-id: ${{ inputs.app-id }}
+        tenant-id: ${{ inputs.tenant-id }}
+        client-secret: ${{ inputs.client-secret }}
+        solution-file: "solutions/${{ inputs.solution-name }}_managed.zip"
+        force-overwrite: true
+        publish-changes: true

@@ -1,0 +1,63 @@
+name: 'Export Power Platform Solution'
+description: 'Exports managed and unmanaged Power Platform solutions and uploads them as artifacts.'
+
+inputs:
+  environment-url:
+    description: 'The URL of the Power Platform environment.'
+    required: true
+  app-id:
+    description: 'Azure AD application (client) ID.'
+    required: true
+  tenant-id:
+    description: 'Azure AD tenant ID.'
+    required: true
+  client-secret:
+    description: 'Azure AD application client secret.'
+    required: true
+  solution-name:
+    description: 'Name of the solution to export.'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
+    - name: Create solutions directory
+      run: mkdir -p "${{ github.workspace }}/solutions"
+      shell: bash
+
+    - name: Export Solution (managed)
+      uses: microsoft/powerplatform-actions/export-solution@v1
+      with:
+        environment-url: ${{ inputs.environment-url }}
+        app-id: ${{ inputs.app-id }}
+        tenant-id: ${{ inputs.tenant-id }}
+        client-secret: ${{ inputs.client-secret }}
+        solution-name: ${{ inputs.solution-name }}
+        solution-output-file: "${{ github.workspace }}/solutions/${{ inputs.solution-name }}_managed.zip"
+        managed: true
+
+    - name: Export Solution (unmanaged)
+      uses: microsoft/powerplatform-actions/export-solution@v1
+      with:
+        environment-url: ${{ inputs.environment-url }}
+        app-id: ${{ inputs.app-id }}
+        tenant-id: ${{ inputs.tenant-id }}
+        client-secret: ${{ inputs.client-secret }}
+        solution-name: ${{ inputs.solution-name }}
+        solution-output-file: "${{ github.workspace }}/solutions/${{ inputs.solution-name }}.zip"
+        managed: false
+
+    - name: Upload Managed Solution
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ inputs.solution-name }}_managed"
+        path: "${{ github.workspace }}/solutions/${{ inputs.solution-name }}_managed.zip"
+
+    - name: Upload Unmanaged Solution
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ inputs.solution-name }}_unmanaged"
+        path: "${{ github.workspace }}/solutions/${{ inputs.solution-name }}.zip"

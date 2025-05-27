@@ -47,7 +47,8 @@ export default defineConfig({
       name: "website",
       use: {
         ...devices["Desktop Chrome"],
-      }
+      },
+      testMatch: /website.test.ts/,
     }
   ],
 });

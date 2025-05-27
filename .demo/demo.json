@@ -167,6 +167,89 @@
         "start": "vm",
         "end": "pass-filled"
       }
+    },
+    {
+      "title": "Install PP Tools",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/actions/export/action.yml",
+          "position": "24:25",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Export managed",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/actions/export/action.yml",
+          "position": "31:40",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Export unmanaged",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/actions/export/action.yml",
+          "position": "42:51",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Run tests",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/actions/playwright/action.yml",
+          "position": "65:74",
+          "zoom": 3
+        }
+      ]
+    },
+    {
+      "title": "Import solution",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/actions/release/action.yml",
+          "position": "32:41"
+        }
+      ]
+    },
+    {
+      "title": "GitHub Actions",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/powerapp-release-testing/actions"
+        }
+      ]
+    },
+    {
+      "title": "Thank you",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/thank-you.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     }
   ]
 }
