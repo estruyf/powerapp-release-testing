@@ -82,6 +82,19 @@ flowchart LR
 
 ---
 
+# What do you need?
+
+- Microsoft Entra app registration
+  - Authenticate our actions for CI/CD against Dataverse
+- Power Platform Environments [Dev, (Build), Test, Prod]
+- Power Platform application users
+  - Connected to the Entra app registration (for every environment)
+- CI/CD configuration
+  - Power Platform CLI or actions/tasks
+  - Service connections
+
+---
+
 # Development
 
 - Export from DEV environment

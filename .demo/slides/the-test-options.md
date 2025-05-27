@@ -9,16 +9,16 @@ layout: section
 
 | Feature / Tool           | Manual Testing            | Test Studio               | Power Apps Test Engine (Preview) | Playwright                       |
 | ------------------------ | ------------------------- | ------------------------- | -------------------------------- | -------------------------------- |
-| Effort to Run            | High (repetitive, manual) | Medium (semi-automated)   | Low (automated via CLI)          | Low (automated via CLI)          |
-| Repeatability            | Low                       | Medium                    | High                             | High                             |
-| UI Coverage              | Full (but inconsistent)   | Limited to basic controls | Simulates control interactions   | Full UI automation (DOM-based)   |
-| Test Authoring           | N/A                       | Point-and-click           | YAML + Power Fx (structured)     | JavaScript/TypeScript scripts    |
-| Version Control Friendly | ❌                        | ❌                        | ✅ (tests stored in source)      | ✅                               |
-| Suitable for CI/CD       | ❌                        | ❌ (no CLI support)       | ✅ (via Power Platform CLI)      | ✅ (easily with any pipeline)    |
-| Debuggability            | Manual observation        | Very limited logs         | Logs, screenshots, trace files   | Screenshots, logs, video, traces |
-| Learning Curve           | None                      | Low                       | Medium (Power Fx + YAML)         | Medium (JS + browser concepts)   |
-| Cross-Platform/Browser   | ✅ (human)                | ❌                        | ✅ (Chromium, Firefox, WebKit)   | ✅ (Chromium, Firefox, WebKit)   |
-| Production Readiness     | ✅                        | ✅                        | ❌ (Preview; not for production) | ✅                               |
+| **Effort to Run**            | High (repetitive, manual) | Medium (semi-automated)   | Low (automated via CLI)          | Low (automated via CLI)          |
+| **Repeatability**            | Low                       | Medium                    | High                             | High                             |
+| **UI Coverage**              | Full (but inconsistent)   | Limited to basic controls | Simulates control interactions   | Full UI automation (DOM-based)   |
+| **Test Authoring**           | N/A                       | Point-and-click           | YAML + Power Fx (structured)     | JavaScript/TypeScript scripts    |
+| **Version Control Friendly** | ❌                        | ❌                        | ✅ (tests stored in source)      | ✅                           |
+| **Suitable for CI/CD**       | ❌                        | ❌ (no CLI support)       | ✅ (via Power Platform CLI)      | ✅ (easily with any pipeline)    |
+| **Debuggability**         | Manual observation        | Very limited logs         | Logs, screenshots, trace files   | Screenshots, logs, video, traces |
+| **Learning Curve**          | None                      | Low                       | Medium (Power Fx + YAML)         | Medium (JS + browser concepts)   |
+| **Cross-Platform/Browser**   | ✅ (human)                | ❌                        | ✅ (Chromium, Firefox, WebKit)   | ✅ (Chromium, Firefox, WebKit)   |
+| **Production Readiness**     | ✅                        | ✅                        | ❌ (Preview; not for production) | ✅              |
 
 <style>
   table {

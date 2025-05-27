@@ -155,6 +155,11 @@
       ]
     },
     {
+      "title": "Show tests in action",
+      "description": "",
+      "steps": []
+    },
+    {
       "title": "More testing",
       "description": "",
       "steps": [
@@ -223,7 +228,8 @@
         {
           "action": "highlight",
           "path": "/.github/actions/release/action.yml",
-          "position": "32:41"
+          "position": "32:41",
+          "zoom": 3
         }
       ]
     },
@@ -233,7 +239,17 @@
       "steps": [
         {
           "action": "openWebsite",
-          "url": "https://github.com/estruyf/powerapp-release-testing/actions"
+          "url": "https://github.com/estruyf/powerapp-release-testing/actions/runs/15274952140"
+        }
+      ]
+    },
+    {
+      "title": "Show the managed app",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://make.powerapps.com/environments/01a0131a-ecd1-efeb-a6d5-e9beb88e9a55/solutions"
         }
       ]
     },

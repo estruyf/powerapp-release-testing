@@ -93,14 +93,14 @@ layout: section
 image: .demo/images/what.avif
 ---
 
-# Does it work, Accessibility, Performance, and Security
+# Functionality, Accessibility, Performance, and Security
 
 ---
 layout: section
 image: .demo/images/what.avif
 ---
 
-# Does it work, Accessibility, ~Performance, and Security~
+# Functionality, Accessibility, ~Performance, and Security~
 
 ---
 layout: image
