@@ -9,7 +9,12 @@
       "description": "",
       "steps": [
         {
-          "action": "closeAll"
+          "action": "snippet",
+          "contentPath": ".demo/snippets/cleanup.json"
+        },
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
         }
       ]
     },
@@ -56,10 +61,14 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
           "action": "highlight",
           "path": "/e2e/tests/website.spec.ts",
           "position": "1:8",
-          "zoom": 3
+          "zoom": 4
         }
       ]
     },
@@ -78,6 +87,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/auth.md"
         }
@@ -91,6 +104,10 @@
       "title": "Auth code",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
         {
           "action": "highlight",
           "path": "/e2e/tests/mfa.setup.ts",
@@ -109,6 +126,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/power-apps.md"
         }
@@ -122,6 +143,10 @@
       "title": "Highlight label check",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
         {
           "action": "highlight",
           "path": "/e2e/tests/powerapps.spec.ts",
@@ -164,6 +189,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/more-testing.md"
         }
@@ -177,6 +206,10 @@
       "title": "Install PP Tools",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
         {
           "action": "highlight",
           "path": "/.github/actions/export/action.yml",
@@ -258,6 +291,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/thank-you.md"
         }
@@ -266,6 +303,27 @@
         "start": "vm",
         "end": "pass-filled"
       }
+    },
+    {
+      "title": "The end",
+      "description": "",
+      "steps": [
+        {
+          "action": "closeAll"
+        },
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleFullScreen"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "showCustomTitleBar"
+        }
+      ]
     }
   ]
 }
