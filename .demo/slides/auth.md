@@ -3,10 +3,10 @@ theme: monomi
 layout: default
 ---
 
-👮‍♀️
+<p id="agent">👮‍♀️</p>
 
 <style>
-  p {
+  #agent {
     font-size: 300px;
     text-align: center;
   }
@@ -16,10 +16,10 @@ layout: default
 layout: section
 ---
 
-# AUTH
+<h1 id="auth">AUTH</a>
 
 <style>
-  h1 {
+  #auth {
     font-size: 250px !important;
     text-align: center;
   }

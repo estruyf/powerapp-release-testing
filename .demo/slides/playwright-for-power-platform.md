@@ -34,9 +34,9 @@ transition: slide-up
 ---
 
 <div class="recognitions">
-  <img src=".demo/assets/profile/github.svg" height="30px" />
-  <img src=".demo/assets/profile/mvp.svg" height="30px" />
-  <img src=".demo/assets/profile/gde.svg" height="30px" />
+  <img src=".demo/assets/profile/github.svg" height="30px" width="30px" />
+  <img src=".demo/assets/profile/mvp.svg" height="30px" width="30px" />
+  <img src=".demo/assets/profile/gde.svg" height="30px" width="30px" />
 </div>
 
 <style>
@@ -50,6 +50,7 @@ transition: slide-up
     z-index: 999;
     bottom: 0;
     right: 0;
+    height: 40px;
   }
 </style>
 
