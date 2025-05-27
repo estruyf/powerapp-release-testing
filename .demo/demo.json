@@ -291,10 +291,6 @@
       "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": ".demo/snippets/startPresentation.json"
-        },
-        {
           "action": "openSlide",
           "path": "/.demo/slides/thank-you.md"
         }
