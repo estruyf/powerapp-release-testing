@@ -1,5 +1,12 @@
 ---
 theme: monomi
+layout: image
+image: .demo/images/eppc25/blog-posts.jpg
+---
+
+<!-- Blog post slide -->
+
+---
 layout: section
 ---
 
@@ -19,8 +26,14 @@ layout: default
 </style>
 
 ---
+layout: intro
+---
+
+# Thank you for attending!
+
+---
 layout: image
-image: .demo/images/thank-you.png
+image: .demo/images/eppc25/rate.png
 ---
 
 <!-- # Thank you! -->

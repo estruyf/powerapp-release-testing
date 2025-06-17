@@ -1,14 +1,14 @@
 ---
 theme: monomi
 layout: image
-image: .demo/images/title.png
+image: .demo/images/eppc25/intro.png
 ---
 
 <!-- # Integrate Playwright tests for Power Apps into your DevOps process -->
 
 ---
 layout: image
-image: .demo/images/sponsors.png
+image: .demo/images/eppc25/title.png
 ---
 
 <!-- # Sponsors -->
@@ -27,7 +27,7 @@ imageSrc: https://elio.dev/eliostruyf_2024_bw_cutout.png
 imageStyle: "background-position: center bottom; background-size: cover;"
 job: "Struyf Consulting"
 line1: "#Stickerpreneur @ pyod.shop"
-line2: "Demo Time / Front Matter CMS"
+line2: "demotime.show / frontmatter.codes"
 social1: "eliostruyf.com 🦋 & 🌐"
 social2: elio@struyfconsulting.be
 transition: slide-up
