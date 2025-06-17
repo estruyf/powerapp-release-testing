@@ -32,11 +32,11 @@ layout: section
 
 # The options
 
-## - GitHub Actions
-
-## - Azure DevOps
-
-## - Power Platform pipelines
+<dt-list>
+- GitHub Actions
+- Azure DevOps
+- Power Platform pipelines
+</dt-list>
 
 ---
 layout: image
