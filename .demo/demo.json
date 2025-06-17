@@ -318,6 +318,10 @@
         {
           "action": "executeVSCodeCommand",
           "command": "showCustomTitleBar"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "demo-time.reset"
         }
       ]
     }
